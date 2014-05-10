@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "qunitjs": "*",
+    "rsync": "^0.3.0",
     "testem": "~0.5.15"
   }
 }

@@ -18,13 +18,14 @@ option null, '--port [PORT]', 'listen on specified port (default 3333)'
 
 LOCAL_BRUNCH = path.join('.', 'node_modules', '.bin', 'brunch')
 
-spawnBrunch = (flags, env) ->
+spawnBrunch = (flags, env, done = ->) ->
   if fs.existsSync(LOCAL_BRUNCH)
     brunch = spawn LOCAL_BRUNCH, flags, env
   else
     console.error 'Warning, using global brunch. Run `npm install`.'
     brunch = spawn 'brunch', flags, env
 
+  brunch.once 'exit', done
   brunch.stdout.on 'data', (data) -> console.log data.toString().trim()
   brunch.stderr.on 'data', (data) -> console.log data.toString().trim()
 
@@ -56,6 +57,30 @@ task 'test', 'run brunch in the test environment', ->
   flags = ['w', '-s']
   process.env.BRUNCH_ENV = 'test'
   spawnBrunch flags, process.env
+
+
+DEPLOY_SERVER = ''
+
+task 'deploy', 'deploy production-ready version to the remote', ->
+  unless DEPLOY_SERVER
+    console.log "DEPLOY_SERVER is not set!"
+    return
+
+  process.env.BRUNCH_ENV = 'production'
+  spawnBrunch ['b', '-P'], process.env, ->
+    Rsync = require 'rsync'
+
+    rsync = new Rsync()
+      .shell('ssh')
+      .flags('az')
+      .source('public/*')
+      .destination(DEPLOY_SERVER);
+
+    rsync.execute (error, code, cmd) ->
+      if error
+        console.log "Failed to deploy: ", error, code, cmd
+      else
+        console.log "You are awesome!"
 
 # -------------
 # Tapas Updates
