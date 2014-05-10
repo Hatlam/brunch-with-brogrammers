@@ -1,16 +1,16 @@
 {
-  "name": "tapas-with-ember",
-  "description": "A Brunch skeleton for rapid Ember development. Including Ember install scripts, generators, and Ember.vim support.",
+  "name": "brunch-with-brogrammers",
+  "description": "Brunch Ember skeleton made for real bros.",
   "author": {
     "name": "Jeremy Mack",
     "email": "@mutewinter",
     "url": "http://twitter.com/mutewinter"
   },
-  "version": "0.1.0",
-  "homepage": "https://github.com/mutewinter/tapas-with-ember",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Hatlam/brunch-with-brogrammers",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mutewinter/tapas-with-ember.git"
+    "url": "https://github.com/Hatlam/brunch-with-brogrammers.git"
   },
   "engines": {
     "node": ">= 0.8.0"

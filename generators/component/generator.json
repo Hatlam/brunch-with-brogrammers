@@ -8,7 +8,7 @@
     },
     {
       "from": "component.emblem.hbs",
-      "to": "app/templates/components/{{name}}.hbs"
+      "to": "app/templates/components/{{name}}.emblem"
     }
   ],
   "dependencies": []
