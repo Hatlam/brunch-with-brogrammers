@@ -3,7 +3,7 @@
   "description": "An Ember Handlebars template",
   "files": [
     {
-      "from": "template.hbs.hbs",
+      "from": "template.emblem.hbs",
       "to": "app/templates/{{name}}.hbs"
     }
   ],

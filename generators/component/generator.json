@@ -7,7 +7,7 @@
       "to": "app/components/{{name}}.coffee"
     },
     {
-      "from": "component.hbs.hbs",
+      "from": "component.emblem.hbs",
       "to": "app/templates/components/{{name}}.hbs"
     }
   ],
