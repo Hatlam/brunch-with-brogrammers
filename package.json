@@ -32,6 +32,8 @@
     "ember-handlebars-brunch": "~1.2.0",
     "emblem-brunch": "git+https://github.com/machty/emblem-brunch.git#master",
     "github": "~0.1.13",
+    "grunt": "^0.4.5",
+    "grunt-rsync": "^0.6.0",
     "jaded-brunch": "^1.7.11",
     "javascript-brunch": "~1.7.1",
     "semver": "~2.2.1",
