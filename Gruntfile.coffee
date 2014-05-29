@@ -62,6 +62,11 @@ module.exports = (grunt) ->
         port: 8888
         async: false
 
+
+      watch:
+        action: 'watch'
+
+
       build:
         action: 'build'
         production: true
