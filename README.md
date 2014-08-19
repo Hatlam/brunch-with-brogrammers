@@ -20,9 +20,9 @@ npm install -g brunch grunt-cli bower
 ```
 
 ## Быстрый старт
- - Можно просто склонировать этот репозиторий. Не забудь поменять remotes!
+ - Создаем новый проект из шаблона
 ```
-git clone https://github.com/Hatlam/brunch-with-brogrammers broplication
+brunch new https://github.com/Hatlam/brunch-with-brogrammers <your-application-name>
 ```
  - Ставим пакеты:
 ```
